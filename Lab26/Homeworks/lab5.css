@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('Fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'CustomFont', sans-serif;
+    text-align: center;
+    line-height: 8;
+    font-size: 50px;
+}
+p {
+    font-family: 'CustomFont', sans-serif;
+    text-align: center;
+    line-height: 8;
+    font-size: 35px;
+}
