@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <button id="btn">Click Me</button>
+    <p id="message">Waiting for a click...</p>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function (){
+            document.getElementById("message").innerText = "Button Clicked!";
+        });
+    </script>
+</html>

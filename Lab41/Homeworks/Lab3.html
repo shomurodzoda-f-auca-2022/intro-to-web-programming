@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Pressed Key</title>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Type something...">
+    <p>Last pressed key: <span id="keyDisplay">None</span></p>
+
+    <script>
+        const inputField = document.getElementById("inputField");
+        const keyDisplay = document.getElementById("keyDisplay");
+
+        inputField.addEventListener("keydown", function(event) {
+            keyDisplay.textContent = event.key;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <button id="multiBtn">Hover or Click Me</button>
+
+    <script>
+        let button = document.getElementById("multiBtn");
+
+        button.addEventListener("mouseover", function() {
+            button.style.backgroundColor = "yellow";
+        })
+
+        button.addEventListener("click", function() {
+            button.style.backgroundColor = "green";
+        })
+    </script>
+</html>
