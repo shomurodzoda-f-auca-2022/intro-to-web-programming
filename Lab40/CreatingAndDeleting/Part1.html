@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+
+    <script>
+        function addItem() {
+          let newItem = document.createElement("li");
+          newItem.innerText = "New Item";
+          document.getElementById("list").appendChild(newItem);
+        }
+    </script>
+</html>

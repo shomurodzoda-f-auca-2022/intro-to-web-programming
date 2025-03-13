@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <p id="message">Hello, World</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            let element = document.getElementById("message");
+            element.innerText = "Text Updated!";
+        }
+    </script>
+</html>

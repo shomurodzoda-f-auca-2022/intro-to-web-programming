@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Box Color</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button onclick="changeColor()">Change Box Color</button>
+
+    <script>
+        function changeColor() {
+            const box = document.querySelector(".box");
+            box.style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

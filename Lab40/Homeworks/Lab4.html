@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Image Source</title>
+</head>
+<body>
+    <img id="myImage" src="https://via.placeholder.com/150" alt="Default Image">
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        function changeImage() {
+            const image = document.getElementById("myImage");
+            image.setAttribute("src", "https://via.placeholder.com/300");
+        }
+    </script>
+</body>
+</html>

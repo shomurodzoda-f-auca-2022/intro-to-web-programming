@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify HTML Content</title>
+</head>
+<body>
+    <div id="content">This is some text.</div>
+    <button onclick="replaceText()">Replace Text</button>
+
+    <script>
+        function replaceText() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = "<h2>This is a new heading!</h2>";
+        }
+    </script>
+</body>
+</html>
