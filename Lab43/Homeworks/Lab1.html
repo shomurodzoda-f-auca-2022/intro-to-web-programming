@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Paragraph Style</title>
+</head>
+<body>
+
+    <p id="text">Sample paragraph.</p>
+    <button onclick="changeStyle()">Click Me</button>
+
+    <script>
+        function changeStyle() {
+            let paragraph = document.getElementById("text");
+            paragraph.style.color = "white";
+            paragraph.style.backgroundColor = "lightgray";
+            paragraph.style.fontSize = "24px";
+        }
+    </script>
+
+</body>
+</html>
