@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter your username">
+    <button onclick="getValue()">Submit</button>
+    <p id="output"></p>
+    <script>
+        function getValue() {
+            let input = document.getElementById("username").value;
+            document.getElementById("output").innerText = "You entered " + input;
+        }
+    </script>
+</body>
+</html>

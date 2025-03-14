@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Submission</title>
+</head>
+<body>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function (event) {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if(name.trim() === "" || email.trim() === "") {
+                alert("All fields are required!");
+                return;
+            }
+
+            document.getElementById("result").innerText = "Form submitted successfully";
+        });
+    </script>
+</body>
+</html>
