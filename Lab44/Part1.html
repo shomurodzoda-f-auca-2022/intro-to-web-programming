@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do-List</title>
+
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-Do-List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        let taskInput = document.getElementById("taskInput");
+        let addTaskButton = document.getElementById("addTask");
+        let taskList = document.getElementById("taskList");
+
+        addTaskButton.onclick = function() {
+            let taskText = taskInput.value.trim();
+            if(taskText === "") {
+                alert("Task cannot be empty");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.textContent = taskText;
+
+            li.onclick = function() {
+                li.classList.toggle("completed");
+                saveTasks();
+            }
+
+            li.ondblclick = function() {
+                taskList.removeChild(li);
+                saveTasks();
+            }
+
+            taskList.appendChild(li);
+            taskInput.value = "";
+            saveTasks();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .btn {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        .delete-btn {
+            background: red;
+        }
+        .edit-btn {
+            background: orange;
+        }
+        input[type="text"] {
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadTasks);
+
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let taskText = input.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            let task = { text: taskText, completed: false };
+            let tasks = getTasksFromStorage();
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+            input.value = "";
+            renderTasks();
+        }
+
+        function renderTasks() {
+            let taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+
+            let tasks = getTasksFromStorage();
+            tasks.forEach((task, index) => {
+                let li = document.createElement("li");
+
+                let taskSpan = document.createElement("span");
+                taskSpan.textContent = task.text;
+                if (task.completed) {
+                    taskSpan.classList.add("completed");
+                }
+
+                taskSpan.onclick = function () {
+                    tasks[index].completed = !tasks[index].completed;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    renderTasks();
+                };
+
+                let editBtn = document.createElement("button");
+                editBtn.textContent = "Edit";
+                editBtn.className = "btn edit-btn";
+                editBtn.onclick = function (event) {
+                    event.stopPropagation();
+                    editTask(index);
+                };
+
+                let deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "X";
+                deleteBtn.className = "btn delete-btn";
+                deleteBtn.onclick = function (event) {
+                    event.stopPropagation();
+                    tasks.splice(index, 1);
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    renderTasks();
+                };
+
+                li.appendChild(taskSpan);
+                li.appendChild(editBtn);
+                li.appendChild(deleteBtn);
+                taskList.appendChild(li);
+            });
+        }
+
+        function editTask(index) {
+            let tasks = getTasksFromStorage();
+            let taskList = document.getElementById("taskList");
+            let li = taskList.children[index];
+
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = tasks[index].text;
+
+            input.onkeypress = function (event) {
+                if (event.key === "Enter") {
+                    tasks[index].text = input.value.trim();
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    renderTasks();
+                }
+            };
+
+            li.innerHTML = "";
+            li.appendChild(input);
+            input.focus();
+        }
+
+        function getTasksFromStorage() {
+            return JSON.parse(localStorage.getItem("tasks")) || [];
+        }
+
+        function loadTasks() {
+            renderTasks();
+        }
+    </script>
+</body>
+</html>
