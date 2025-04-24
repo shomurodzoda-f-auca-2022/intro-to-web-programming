@@ -1,0 +1,22 @@
+movies_list = [
+    {"id": 1, "title": "The Shawshank Redemption", "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."},
+    {"id": 2, "title": "The Godfather", "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."},
+    {"id": 3, "title": "The Dark Knight", "description": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham."},
+    {"id": 4, "title": "Schindler's List", "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish employees."},
+    {"id": 5, "title": "The Lord of the Rings: The Return of the King", "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."},
+    {"id": 6, "title": "Pulp Fiction", "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption."},
+    {"id": 7, "title": "The Good, the Bad and the Ugly", "description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a quest to find a fortune in gold buried in a remote cemetery."},
+    {"id": 8, "title": "Fight Club", "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club."},
+    {"id": 9, "title": "Forrest Gump", "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Civil Rights Movement, and other historical events unfold from the perspective of an Alabama man with an extraordinary story."},
+    {"id": 10, "title": "Inception", "description": "A thief who enters the minds of others through their dreams is given the chance to have his criminal record erased if he can successfully perform an inception."},
+    {"id": 11, "title": "Star Wars: Episode IV - A New Hope", "description": "Luke Skywalker embarks on a quest to rescue Princess Leia, aided by a ragtag team of allies and against the backdrop of a galactic empire."},
+    {"id": 12, "title": "The Matrix", "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."},
+    {"id": 13, "title": "The Empire Strikes Back", "description": "After the rebels are overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued across the galaxy by Darth Vader."},
+    {"id": 14, "title": "Goodfellas", "description": "The story of Henry Hill and his life in the mob, covering his rise to power, his involvement with criminal activities, and his eventual downfall."},
+    {"id": 15, "title": "Se7en", "description": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi."},
+    {"id": 16, "title": "The Silence of the Lambs", "description": "A young FBI cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims."},
+    {"id": 17, "title": "City of God", "description": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin."},
+    {"id": 18, "title": "The Usual Suspects", "description": "A sole survivor tells the twisted story of events leading up to a horrific gun battle on a boat, which started with a heist gone wrong."},
+    {"id": 19, "title": "Life is Beautiful", "description": "A Jewish man uses his imagination to protect his son in a Nazi concentration camp."},
+    {"id": 20, "title": "It's a Wonderful Life", "description": "An angel helps a compassionate but despairingly frustrated businessman by showing what life would have been like if he never existed."}
+]

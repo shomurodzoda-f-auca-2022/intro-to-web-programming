@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Movie Review Website!</h1>
+    <p>This is a platform where you can view movies and leave reviews.</p>
+    <p><a href="{{ url_for('main.login') }}">Login</a> or <a href="{{ url_for('main.register') }}">Register</a> to start posting reviews!</p>
+{% endblock %}
