@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<h2>Login</h2>
-<form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.email.label }} {{ form.email() }}<br>
-    {{ form.password.label }} {{ form.password() }}<br>
-    {{ form.submit() }}
-</form>
+<div class="centered-form-wrapper">
+    <form method="POST">
+        <h2>Login</h2>
+        {{ form.hidden_tag() }}
+        {{ form.email.label }} {{ form.email() }}<br>
+        {{ form.password.label }} {{ form.password() }}<br>
+        {{ form.submit() }}
+        <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register here</a></p>
+    </form>
+</div>
 {% endblock %}
