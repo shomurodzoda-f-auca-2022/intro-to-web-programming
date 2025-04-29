@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Reviews for {{ movie.title }}{% endblock %}
+
+{% block content %}
+    <h2>Reviews for "{{ movie.title }}"</h2>
+
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <strong>Rating:</strong> {{ review.rating }}<br>
+                    <p>{{ review.content }}</p>
+                    <small>Posted by: {{ review.user.username }} on {{ review.timestamp.strftime('%Y-%m-%d') }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+{% endblock %}

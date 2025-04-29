@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}Movies List{% endblock %}
+
 {% block content %}
     <h1>Movies List</h1>
-    <p>Browse the list of movies below:</p>
 
-    <ul>
-        {% for movie in movies %}
-            <li>
-                <h3>{{ movie.title }} ({{ movie.year }})</h3>
-                <p>{{ movie.description }}</p>
-                <a href="{{ url_for('main.movie_detail', movie_id=movie.id) }}">Post a Review</a>
-            </li>
-        {% endfor %}
-    </ul>
+    {% for movie in movies %}
+        <div>
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.description }}</p>
+            <a href="{{ url_for('main.review', movie_id=movie.id) }}">Add Review</a>
+            {% if movie.reviews|length > 0 %}
+                | <a href="{{ url_for('main.view_reviews', movie_id=movie.id) }}">View Reviews</a>
+            {% endif %}
+            <hr>
+        </div>
+    {% endfor %}
 {% endblock %}

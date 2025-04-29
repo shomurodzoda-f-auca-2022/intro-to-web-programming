@@ -6,25 +6,39 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
     color: #333;
-    line-height: 1.6;
+}
+
+body.home, body.login, body.register {
+    background-image: url("images/movie-reviews.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+header, main, footer {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+h1, h2, h3 {
+    color: RED;
+    margin-bottom: 15px;
 }
 
 header {
     background-color: #222;
     color: #fff;
     padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 nav a {
-    color: #fff;
+    color: green;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -36,13 +50,8 @@ nav a:hover {
 
 main {
     padding: 40px 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-}
-
-h1, h2, h3 {
-    margin-bottom: 15px;
-    color: #222;
 }
 
 ul {
@@ -66,9 +75,16 @@ form {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     max-width: 500px;
-    margin-top: 20px;
+    margin: 20px auto;
+}
+
+form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
 }
 
 form input,
@@ -81,7 +97,7 @@ form button {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease;
 }
 
 form input:focus,
@@ -97,12 +113,32 @@ form button {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
 form button:hover {
     background-color: #d9aa30;
+}
+
+form button[type="submit"] {
+    background-color: black;
+    color: white;
+}
+
+form button[type="submit"]:hover {
+    background-color: #333;
+}
+
+form a {
+    color: red;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+form a:hover {
+    color: #333;
 }
 
 .star-rating {
@@ -120,7 +156,7 @@ form button:hover {
 .star-rating label {
     color: #ddd;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
 }
 
 .star-rating input:checked ~ label,
@@ -138,19 +174,12 @@ form button:hover {
 }
 
 form {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
     text-align: center;
-}
-
-form h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 form input,
@@ -189,35 +218,102 @@ form button:hover {
     background-color: #ddd;
 }
 
-form button[type="submit"] {
-    background-color: black;
-    color: white;
-}
-
-form button[type="submit"]:hover {
-    background-color: #333;
-}
-
-form a {
-    color: red;
+a {
+    color: #007bff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
-form a:hover {
-    color: #333;
+a:hover {
+    color: #0056b3;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
+.movie-detail {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.movie-detail h2 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.movie-detail p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.movie-detail .reviews {
+    margin-top: 20px;
+}
+
+.movie-detail .reviews ul {
+    list-style-type: none;
     padding: 0;
-    background-color: #f9f9f9;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.movie-detail .reviews ul li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+}
+
+.movie-detail .reviews ul li p {
+    margin-bottom: 10px;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-list .movie-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 280px;
+    text-align: center;
+}
+
+.movie-list .movie-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.movie-list .movie-card p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.movie-list .movie-card a {
+    text-decoration: none;
+    color: #f0c040;
+    font-weight: bold;
+}
+
+.movie-list .movie-card a:hover {
+    color: #d9aa30;
+}
+
+@media screen and (max-width: 768px) {
+    .movie-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        max-width: 90%;
+    }
+
+    header {
+        text-align: center;
+    }
 }

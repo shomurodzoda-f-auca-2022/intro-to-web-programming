@@ -31,3 +31,19 @@ def create_app():
         db.create_all()
 
     return app
+
+def seed_movies():
+    from .models import Movie
+    from .utilities.movies import movies_list
+
+    for movie in movies_list:
+        existing = Movie.query.filter_by(title=movie['title']).first()
+        if not existing:
+            new_movie = Movie(
+                title=movie['title'],
+                description=movie['description'],
+                year=movie['year']
+            )
+            db.session.add(new_movie)
+    db.session.commit()
+    print("Movies seeded.")

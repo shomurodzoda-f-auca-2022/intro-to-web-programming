@@ -14,6 +14,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class ReviewForm(FlaskForm):
-    content = TextAreaField('Review', validators=[DataRequired(), Length(min=10)])
+    content = TextAreaField('Review', validators=[DataRequired()])
     rating = IntegerField('Rating', validators=[DataRequired(), NumberRange(min=1, max=5)])
     submit = SubmitField('Submit')
