@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
+
 {% block content %}
 <div class="centered-form-wrapper">
-    <form method="POST">
-        <h2>Login</h2>
-        {{ form.hidden_tag() }}
-        {{ form.email.label }} {{ form.email() }}<br>
-        {{ form.password.label }} {{ form.password() }}<br>
-        {{ form.submit() }}
-        <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register here</a></p>
-    </form>
+    <div class="form-container">
+        <form method="POST">
+            <h2>Login</h2>
+            {{ form.hidden_tag() }}
+            {{ form.email.label }} {{ form.email() }}<br>
+            {{ form.password.label }} {{ form.password() }}<br>
+            {{ form.submit() }}
+            <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register here</a></p>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+    </div>
 </div>
 {% endblock %}

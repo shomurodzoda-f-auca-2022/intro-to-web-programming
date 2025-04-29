@@ -7,13 +7,13 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-}
 
-body.home, body.login, body.register {
     background-image: url("images/movie-reviews.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 header, main, footer {
@@ -21,7 +21,7 @@ header, main, footer {
 }
 
 h1, h2, h3 {
-    color: RED;
+    color: #b30000;
     margin-bottom: 15px;
 }
 
@@ -138,7 +138,7 @@ form a {
 }
 
 form a:hover {
-    color: #333;
+    color: gray;
 }
 
 .star-rating {
@@ -316,4 +316,20 @@ a:hover {
     header {
         text-align: center;
     }
+}
+
+.flash-messages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
 }
