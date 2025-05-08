@@ -5,6 +5,8 @@
 {% block content %}
     <h2>Post a Review for "{{ movie.title }}"</h2>
 
+        <a href="{{ url_for('main.movie_list') }}" class="back-button">← Back to Movie List</a>
+
     <form method="POST">
         {{ form.hidden_tag() }}
         <div>
