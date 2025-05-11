@@ -318,11 +318,6 @@ a:hover {
     }
 }
 
-.flash-messages {
-    margin-top: 20px;
-    text-align: center;
-}
-
 .alert {
     padding: 10px 15px;
     border-radius: 5px;
@@ -349,4 +344,36 @@ a:hover {
 .back-button:hover {
     background-color: #0056b3;
     color: white;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.flash-messages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
 }
